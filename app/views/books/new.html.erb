@@ -1,0 +1,25 @@
+<%= link_to "Back to Author books", author_books_path %>
+
+<h1>Add book by <%= @author.first_name %><%= @author.last_name %></h1>
+
+<%= form_for [@author, @book] do |b| %>
+
+    <div class="field">
+        <%= b.label :title, 'Title' %>
+        <%= b.text_field :title, placeholder: 'enter title' %>
+    </div>
+
+    <div class="field">
+        <%= b.label :genre, 'Genre' %>
+        <%= b.text_field :genre %>
+    </div>
+
+    <div class="field">
+        <%= b.label :published, 'Year published' %>
+        <%= b.text_field :published %>
+    </div>
+
+    <%= b.submit 'Submit' %>
+
+<% end %>
+

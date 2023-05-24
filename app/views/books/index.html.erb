@@ -1,5 +1,10 @@
 <h1>All books by <%= @author.first_name %> <%= @author.last_name %></h1>
 
+
+<%= link_to "Back to author", author_path(@author) %>
+&nbsp;|&nbsp;
+<%= link_to "Add book", new_author_book_path %>
+
 <table>
     <tr>
         <th>Title </th>
@@ -12,6 +17,8 @@
             <td><%= book.title %></td>
             <td><%= book.genre %></td>
             <td><%= book.published %></td>
+            
+            <td>Edit book </td>
         </tr>
     <% end %>
 
