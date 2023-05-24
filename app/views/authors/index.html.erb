@@ -1,0 +1,29 @@
+<h1>All authors</h1>
+
+<%= link_to "Create new author", new_author_path %>
+
+<br></br>
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+
+    <% @authors.each do |author| %>
+        <tr>
+            <td><%= link_to author.first_name, author_path(author) %></td>
+            <td><%= link_to author.last_name, author_path(author) %></td>
+            <td>
+                <%= link_to "Edit Author", edit_author_path(author) %>
+                &nbsp;|&nbsp;
+
+                <%= link_to "Delete Author", author_path(author), 
+                            data: { 
+                                turbo_method: :delete, 
+                                turbo_confirm: "Are you sure you want to delete #{author.first_name} #{author.last_name}?" 
+                                } %>
+            </td>
+        </tr>
+    <% end %>
+
+</table>
