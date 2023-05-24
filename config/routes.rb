@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   # get "authors", to: "authors#index"
   # get "authors/:id", to: "authors#show"
 
-    resources :authors
+    resources :authors do
+      resources :books
+    end
 end

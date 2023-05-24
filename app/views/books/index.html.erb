@@ -1,0 +1,18 @@
+<h1>All books by <%= @author.first_name %> <%= @author.last_name %></h1>
+
+<table>
+    <tr>
+        <th>Title </th>
+        <th>Genre</th>
+        <th>Published</th>
+    </tr>
+
+    <% @books.each do |book| %>
+        <tr>
+            <td><%= book.title %></td>
+            <td><%= book.genre %></td>
+            <td><%= book.published %></td>
+        </tr>
+    <% end %>
+
+</table>

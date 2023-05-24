@@ -1,12 +1,18 @@
 <!--# Can two different @ not go in the same clown hat? -->
 <%= link_to "All Authors", authors_path %>
 
-<h1>Author details</h1>
 
-<h2><%= @author.first_name %><%= @author.last_name %></h2>
+
+<h1><%= @author.first_name %><%= @author.last_name %></h1>
+
+<h2>Author details</h2>
 
 <ul>
     <li>Birth year: <%= @author.author_birthdate %></li>
     <li>Number of books: <%= @author.number_of_books %></li>
 </ul>
+
+
+<h2>Books</h3>
+<%= link_to "Show #{@author.first_name}'s books", author_books_path(@author) %>
 
